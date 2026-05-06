@@ -1,6 +1,12 @@
 import os
 from dotenv import load_dotenv
 from groq import Groq
+from groq.types.chat import ChatCompletionMessageParam
+from typing import List
+
+conversation: List[ChatCompletionMessageParam] = [
+    {"role": "system", "content": "You are a helpful LLMs expert. Be concise."}
+]
 
 load_dotenv()
 
