@@ -11,8 +11,8 @@ groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 groq_response = groq_client.chat.completions.create(
     model="llama-3.1-8b-instant",
     temperature=0,
-    max_tokens=200,          # límite duro de tokens
-    frequency_penalty=0.5,   # penaliza repetir las mismas frases
+    max_tokens=200,          # tokens limitation
+    frequency_penalty=0.5,   # avoid repetition
     messages=[
         {"role": "system", "content": "You are a helpful assistant. Be concise."},
         {"role": "user", "content": "What is RAG for in LLMs? Answer in 3 lines."}
